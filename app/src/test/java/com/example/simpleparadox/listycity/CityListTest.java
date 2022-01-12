@@ -55,4 +55,41 @@ class CityListTest {
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(1)));
     }
 
+    @Test
+    void testCountCities(){
+        //write the code to counting
+        CityList cityList =mockCityList();
+        assertEquals(1, cityList.getCities().size());
+
+        City city = new City("Jashore","Khulna");
+        cityList.add(city);
+
+        assertEquals(2, cityList.countCities());
+        assertTrue(cityList.countCities() == 2);
+
+    }
+
+
+    @Test
+    void testDeleteCities(){
+        //write to test the delete function
+
+
+        CityList cityList = mockCityList();
+
+        assertEquals(1, cityList.getCities().size());
+
+        City city = new City("Regina", "Saskatchewan");
+        cityList.add(city);
+        assertEquals(2, cityList.getCities().size());
+
+        cityList.delete(city);
+
+        assertEquals(1, cityList.getCities().size());
+        assertTrue(cityList.getCities().size() == 1);
+
+
+
+    }
+
 }
