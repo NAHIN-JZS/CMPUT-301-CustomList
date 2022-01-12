@@ -40,8 +40,9 @@ public class CityList {
      * It will return the size of city list
      */
 
-    public void countCities(){
+    public int countCities(){
         // code for count cities
+        return cities.size();
     }
 
     /**
@@ -53,6 +54,14 @@ public class CityList {
     public void delete(City city){
         //city thakle city delete korbe... na thakle exception throw korbe
         //also add the exception if the city does not in the list
+
+        if(cities.contains(city)){
+            cities.remove(city);
+
+        }
+        else{
+            throw new NoSuchElementException();
+        }
 
 
     }
